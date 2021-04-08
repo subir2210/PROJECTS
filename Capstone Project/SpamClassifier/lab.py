@@ -2,6 +2,7 @@ import pandas as pd
 import re
 import nltk
 nltk.download('stopwords')
+nltk.download('punkt')
 
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
@@ -18,7 +19,7 @@ for i in range(0,len(df)):
     doc=[ps.stem(j) for j in doc if not j in stopwords.words('english')]
     doc=' '.join(doc)
     corpus.append(doc)
-    
+        
 # Bag of words
     
 from sklearn.feature_extraction.text import CountVectorizer
